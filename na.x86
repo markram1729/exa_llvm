@@ -1,0 +1,98 @@
+	.text
+	.file	"exa_ll.cpp"
+	.section	.text.startup,"ax",@progbits
+	.p2align	4, 0x90                         # -- Begin function __cxx_global_var_init
+	.type	__cxx_global_var_init,@function
+__cxx_global_var_init:                  # @__cxx_global_var_init
+	.cfi_startproc
+# %bb.0:
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset %ebp, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register %ebp
+	subl	$8, %esp
+	subl	$12, %esp
+	pushl	$_ZStL8__ioinit
+	calll	_ZNSt8ios_base4InitC1Ev@PLT
+	addl	$12, %esp
+	pushl	$__dso_handle
+	pushl	$_ZStL8__ioinit
+	pushl	$_ZNSt8ios_base4InitD1Ev
+	calll	__cxa_atexit@PLT
+	addl	$24, %esp
+	popl	%ebp
+	.cfi_def_cfa %esp, 4
+	retl
+.Lfunc_end0:
+	.size	__cxx_global_var_init, .Lfunc_end0-__cxx_global_var_init
+	.cfi_endproc
+                                        # -- End function
+	.text
+	.globl	main                            # -- Begin function main
+	.p2align	4, 0x90
+	.type	main,@function
+main:                                   # @main
+	.cfi_startproc
+# %bb.0:
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset %ebp, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register %ebp
+	subl	$24, %esp
+	movl	$0, -4(%ebp)
+	leal	_ZSt4cout, %eax
+	leal	.L.str, %ecx
+	movl	%eax, (%esp)
+	movl	%ecx, 4(%esp)
+	calll	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
+	leal	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %ecx
+	movl	%eax, (%esp)
+	movl	%ecx, 4(%esp)
+	calll	_ZNSolsEPFRSoS_E@PLT
+	xorl	%eax, %eax
+	addl	$24, %esp
+	popl	%ebp
+	.cfi_def_cfa %esp, 4
+	retl
+.Lfunc_end1:
+	.size	main, .Lfunc_end1-main
+	.cfi_endproc
+                                        # -- End function
+	.section	.text.startup,"ax",@progbits
+	.p2align	4, 0x90                         # -- Begin function _GLOBAL__sub_I_exa_ll.cpp
+	.type	_GLOBAL__sub_I_exa_ll.cpp,@function
+_GLOBAL__sub_I_exa_ll.cpp:              # @_GLOBAL__sub_I_exa_ll.cpp
+	.cfi_startproc
+# %bb.0:
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset %ebp, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register %ebp
+	subl	$8, %esp
+	calll	__cxx_global_var_init
+	addl	$8, %esp
+	popl	%ebp
+	.cfi_def_cfa %esp, 4
+	retl
+.Lfunc_end2:
+	.size	_GLOBAL__sub_I_exa_ll.cpp, .Lfunc_end2-_GLOBAL__sub_I_exa_ll.cpp
+	.cfi_endproc
+                                        # -- End function
+	.type	_ZStL8__ioinit,@object          # @_ZStL8__ioinit
+	.local	_ZStL8__ioinit
+	.comm	_ZStL8__ioinit,1,1
+	.hidden	__dso_handle
+	.type	.L.str,@object                  # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"My algo"
+	.size	.L.str, 8
+
+	.section	.init_array,"aw",@init_array
+	.p2align	2, 0x0
+	.long	_GLOBAL__sub_I_exa_ll.cpp
+	.ident	"clang version 19.0.0git (https://github.com/llvm/llvm-project 37eb9c9632fb5e82827d1a0559f2279e9a9f1969)"
+	.section	".note.GNU-stack","",@progbits

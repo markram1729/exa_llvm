@@ -24,7 +24,7 @@ declare void @_ZNSt8ios_base4InitD1Ev(ptr noundef nonnull align 1 dereferenceabl
 ; Function Attrs: nounwind
 declare i32 @__cxa_atexit(ptr, ptr, ptr) #3
 
-; Function Attrs: mustprogress noinline nounwind optnone uwtable
+; Function Attrs: mustprogress noinline nounwind uwtable
 define dso_local noundef i32 @_Z3funPKi(ptr noundef %0) #4 {
   %2 = alloca ptr, align 8
   store ptr %0, ptr %2, align 8
@@ -34,7 +34,7 @@ define dso_local noundef i32 @_Z3funPKi(ptr noundef %0) #4 {
   ret i32 %5
 }
 
-; Function Attrs: mustprogress noinline norecurse nounwind optnone uwtable
+; Function Attrs: mustprogress noinline norecurse nounwind uwtable
 define dso_local noundef i32 @main() #5 {
   %1 = alloca i32, align 4
   %2 = alloca i32, align 4
@@ -54,8 +54,8 @@ attributes #0 = { noinline uwtable "frame-pointer"="all" "min-legal-vector-width
 attributes #1 = { "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
 attributes #2 = { nounwind "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
 attributes #3 = { nounwind }
-attributes #4 = { mustprogress noinline nounwind optnone uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
-attributes #5 = { mustprogress noinline norecurse nounwind optnone uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #4 = { mustprogress noinline nounwind uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #5 = { mustprogress noinline norecurse nounwind uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
 
 !llvm.module.flags = !{!0, !1, !2, !3, !4}
 !llvm.ident = !{!5}

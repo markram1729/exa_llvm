@@ -25,6 +25,28 @@ __cxx_global_var_init:                  # @__cxx_global_var_init
 	.cfi_endproc
                                         # -- End function
 	.text
+	.globl	_Z3funPKi                       # -- Begin function _Z3funPKi
+	.p2align	4, 0x90
+	.type	_Z3funPKi,@function
+_Z3funPKi:                              # @_Z3funPKi
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movq	%rdi, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movl	(%rax), %eax
+	addl	$1, %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end1:
+	.size	_Z3funPKi, .Lfunc_end1-_Z3funPKi
+	.cfi_endproc
+                                        # -- End function
 	.globl	main                            # -- Begin function main
 	.p2align	4, 0x90
 	.type	main,@function
@@ -38,19 +60,16 @@ main:                                   # @main
 	.cfi_def_cfa_register %rbp
 	subq	$16, %rsp
 	movl	$0, -4(%rbp)
-	movq	_ZSt4cout@GOTPCREL(%rip), %rdi
-	leaq	.L.str(%rip), %rsi
-	callq	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@PLT
-	movq	%rax, %rdi
-	movq	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GOTPCREL(%rip), %rsi
-	callq	_ZNSolsEPFRSoS_E@PLT
+	movl	$4, -8(%rbp)
+	leaq	-8(%rbp), %rdi
+	callq	_Z3funPKi
 	xorl	%eax, %eax
 	addq	$16, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
-.Lfunc_end1:
-	.size	main, .Lfunc_end1-main
+.Lfunc_end2:
+	.size	main, .Lfunc_end2-main
 	.cfi_endproc
                                         # -- End function
 	.section	.text.startup,"ax",@progbits
@@ -68,20 +87,14 @@ _GLOBAL__sub_I_exa_ll.cpp:              # @_GLOBAL__sub_I_exa_ll.cpp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
-.Lfunc_end2:
-	.size	_GLOBAL__sub_I_exa_ll.cpp, .Lfunc_end2-_GLOBAL__sub_I_exa_ll.cpp
+.Lfunc_end3:
+	.size	_GLOBAL__sub_I_exa_ll.cpp, .Lfunc_end3-_GLOBAL__sub_I_exa_ll.cpp
 	.cfi_endproc
                                         # -- End function
 	.type	_ZStL8__ioinit,@object          # @_ZStL8__ioinit
 	.local	_ZStL8__ioinit
 	.comm	_ZStL8__ioinit,1,1
 	.hidden	__dso_handle
-	.type	.L.str,@object                  # @.str
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str:
-	.asciz	"My algo"
-	.size	.L.str, 8
-
 	.section	.init_array,"aw",@init_array
 	.p2align	3, 0x0
 	.quad	_GLOBAL__sub_I_exa_ll.cpp
@@ -90,10 +103,7 @@ _GLOBAL__sub_I_exa_ll.cpp:              # @_GLOBAL__sub_I_exa_ll.cpp
 	.addrsig
 	.addrsig_sym __cxx_global_var_init
 	.addrsig_sym __cxa_atexit
-	.addrsig_sym _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-	.addrsig_sym _ZNSolsEPFRSoS_E
-	.addrsig_sym _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+	.addrsig_sym _Z3funPKi
 	.addrsig_sym _GLOBAL__sub_I_exa_ll.cpp
 	.addrsig_sym _ZStL8__ioinit
 	.addrsig_sym __dso_handle
-	.addrsig_sym _ZSt4cout

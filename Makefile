@@ -20,3 +20,7 @@ c :
 	rm neo.ll
 cemit : 
 	rm neoemit.ll
+
+dot_cfg :exa_ast.c
+	$(BIN_DIR)/clang -S -emit-llvm exa_ast.c -o exa_cfg.ll
+	$(BIN_DIR)/opt -passes='dot-cfg-only' exa_cfg.ll
